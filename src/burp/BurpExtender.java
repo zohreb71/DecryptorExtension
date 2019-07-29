@@ -185,11 +185,11 @@ public class BurpExtender implements IBurpExtender, IMessageEditorTabFactory , I
         switch (encryptionAlg) {
             case "AES": {
                 aes = new AES (secretKey.getBytes(),iv);
-                aes.encrypt(message);
+                return aes.encrypt(message);
             }
             case "DES":{
                 des = new DES(secretKey.getBytes());
-                des.encrypt(message);
+                return des.encrypt(message);
             }
         }
         return "";
